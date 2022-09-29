@@ -34,9 +34,8 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     celular = models.IntegerField('Celular')
     e_mail = models.EmailField('EMail', max_length= 50)
     direccion = models.CharField('Direccion', max_length = 50)
-    contraseña = models.CharField('Contraseña', max_length=50)
     username = models.CharField('Username', max_length = 50, unique=True)
-    password = models.CharField('Password', max_length = 50)
+    password = models.CharField('Password', max_length = 256)
 
     def save(self, **kwargs):
         some_salt = 'mMUj0DrIK6vgtdIYepkIxN'
